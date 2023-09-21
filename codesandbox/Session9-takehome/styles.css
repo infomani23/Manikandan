@@ -1,0 +1,31 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: 1px #dadada;
+  border-style: solid;
+  margin: 1rem;
+  padding: 2rem 0rem 2rem 0rem;
+  width: 10rem;
+  height: 80vh;
+}
+
+#sb-heading {
+  color: blueviolet;
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.sb-item {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.sb-item:hover {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
