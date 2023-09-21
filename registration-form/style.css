@@ -46,6 +46,19 @@ form h5{
     margin: 20px 0px;
 }
 
+.error{
+    color: red;
+    font-size: 16px;
+    
+}
+
+.input-group .success input{
+    border-color: #0cc477 ;
+}
+
+.input-group .error input{
+    border-color: rgb(206,67,67);
+}
 
 
 
