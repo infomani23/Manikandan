@@ -4,23 +4,56 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 
 form.addEventListener('submit',(e)=>{
-    e.preventDefault()
-    validateInputs();
-});
+    
+    if(!validateInputs()){
+        e.preventDefault();
+    }
+})
 
 function validateInputs(){
-    const fullnameval = Fullname.value.trim()
-    const emailval = email.value.trim()
-    const passval = password.value.trim()
+    const fullnameval = Fullname.value.trim();
+    const emailval = email.value.trim();
+    const passval = password.value.trim();
+
+    let success = true
+    if(fullnameval === ''){
+        success = false;
+        setError(Fullname, 'fullname is required')
+    }else{
+        setSuccess(Fullname)
     }
+    if(emailval === ''){
+        success = false;
+        setError(email, 'Email is required')
+    }else if(!validateEmail(emailval)){
+        success = false;
+        setError(email, 'Please enter a valid Email')
+    }
+    else{
+        setSuccess(email)
+    }
+     if(passval === ''){
+        success =false;
+        setError(password,'Password is required')
+     }else if(passval.length<8){
+        success = false;
+        setError(password, 'password must be atleast 8 character long')
+     }else{
+        setSuccess(password)
+     }
+     return success;
+    }
+   
+
+
 
 function setError(element,message) {
 
     const inputGroup =element.parentElement;
-    const errorElement = inputGroup.querySelector('.error');
+    const errorElement = inputGroup.querySelector('.error')
     errorElement.innerText = message;
-    inputGroup.classList.add('error');
-    inputGroup.classList.remove('success');
+    inputGroup.classList.add('error')
+    inputGroup.classList.remove('success')
 
 }   
 
